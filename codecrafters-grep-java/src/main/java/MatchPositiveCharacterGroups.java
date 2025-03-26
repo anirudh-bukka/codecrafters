@@ -26,14 +26,17 @@ public class MatchPositiveCharacterGroups {
             }
             return false;
         } else if ("\\w".equals(pattern)) {
-            return inputLine.matches(".*\\w.*");
-            /*
-            OR CAN ALSO DO THIS:
-            for(int i = 0; i < pattern.length(); i++) {
-                if(Character.isAlphabetic(inputLine.charAt(i)))
+//            return inputLine.matches(".*\\w.*");
+
+//            OR CAN ALSO DO THIS:
+            for(int i = 0; i < inputLine.length(); i++) {
+                if(Character.isAlphabetic(inputLine.charAt(i))) {
+//                    System.err.println("Iterating till pattern.length().");
                     return true;
+                }
             }
-             */
+            return false;
+
         } else if (pattern.startsWith("[") && pattern.endsWith("]")) {
             String subStr = pattern.substring(1, pattern.length()-1);
             for(int i = 0; i < inputLine.length(); i++) {
