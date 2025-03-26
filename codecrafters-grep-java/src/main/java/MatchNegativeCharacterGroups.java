@@ -26,7 +26,7 @@ public class MatchNegativeCharacterGroups {
             }
             return false;
         } else if("\\w".equals(pattern)) {
-//            return inputLine.matches(".*\\w.*");
+//            return inputLine.matches(".*\\w.*"); // <-- this also works
             for(int i = 0; i < pattern.length(); i++) {
                 if(Character.isAlphabetic(inputLine.charAt(i)))
                     return true;
